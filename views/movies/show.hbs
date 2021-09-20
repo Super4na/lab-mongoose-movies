@@ -1,9 +1,10 @@
 <h2>Featured artists</h2>
  
-<h1>{{name}}</h1>
-<h3>Occupation: {{occupation}}</h3>
-<p>Catch Phrase: {{catchPhrase}}</p>
-<button><a href="/celebrities/{{id}}/edit">Edit</a></button>
+<h1>{{title}}</h1>
+<h3>Genre: {{genre}}</h3>
+<p>Plot: {{plot}}</p>
+<p>cast: {{cast.name}}</p>
+<button><a href="/movies/{{id}}/edit">Edit</a></button>
 <hr/>
 <p>Add a review</p>
 <form action="/reviews/{{id}}/add" method="POST">

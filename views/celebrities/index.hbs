@@ -1,14 +1,15 @@
-<h2>Celebrity Index</h2>
+<h2>Featured artists</h2>
+ 
 <ul>
-{{#each celebs}}
+{{#each celebrities}}
 <li>
-    {{name}}
-    <a href="/celebrities/{{id}}">Get to Know</a>
+    <a href="celebrities/{{id}}">   {{name}}  </a>
     <form action="/celebrities/{{id}}/delete" method="POST">
-    <button type="submit">Delete</button>
+        <button type="submit">Delete</button>
     </form>
+    <br/>
 </li>
 {{/each}}
 </ul>
-
-
+ 
+ 

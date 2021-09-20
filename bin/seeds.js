@@ -1,20 +1,25 @@
-require("../db");
-const Celeb = require("../models/celeb.model");
+var db = require("../db");
 
-const celeb = [ {
-    name: "Tinashe",
-    occupation: "Rnb Princess",
-    catchPhrase: "I love 2 get 2On",
-},
-{
-    name: "Rina Sawayama",
-    occupation: "Pop Princess",
-    catchPhrase:"Give me just a litle bit of XS",
-},
-{
-    name: "Azealia Banks",
-    occupation: "Rapper",
-    catchPhrase:"Pretty AB, pretty pretty AB, damn little bam you can get it maybe",
-}];
+const Celebrity = require("../models/Celebrity-model")
 
-Celeb.insertMany(celeb).then((celebsFromDb)=>{console.log(`celebs created - ${celebsFromDb.length} `)})
+const idols = [
+    {
+        name: "Beyonce",
+        occupation: "Singer",
+        catchPhrase: "To the left. To the left"
+    }, {
+        name: "Florence",
+        occupation: "Singer",
+        catchPhrase: "Too fast for freedom"
+    }, {
+        name: "omocat",
+        occupation: "Game Developer",
+        catchPhrase: "You'll forgive yourself. Won't you sunny?"
+
+    },
+];
+
+
+Celebrity.insertMany(idols).then((celebritiesFromDB) => {
+    console.log(`${celebritiesFromDB.length} celebrities have graced us with `)
+});

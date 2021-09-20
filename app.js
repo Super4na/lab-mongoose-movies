@@ -15,6 +15,9 @@ const hbs = require("hbs");
 
 const app = express();
 
+const helpers = require("handlebars-helpers");
+hbs.registerHelper(helpers());
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
@@ -28,8 +31,11 @@ app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
 const index = require("./routes/index");
 app.use("/", index);
 
-const celebrity =require("./routes/celebrity");
-app.use("/", celebrity);
+const celebrities = require("./routes/celebrities");
+app.use("/", celebrities);
+
+const movies = require("./routes/movies");
+app.use("/", movies);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

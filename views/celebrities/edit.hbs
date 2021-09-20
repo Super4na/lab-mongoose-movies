@@ -1,10 +1,22 @@
-<h2>Edit Celebrity</h2>
-<form action="/celebrities/new" method="POST">
-<label>Name</label>
-<input type="text" name="name" value="{{name}}"/>
-<label>Occupation</label>
-<input type="text" name="occupation" value="{{occupation}}"/>
-<label>Catch Phrase</label>
-<input type="text" name="catchPhrase" value="{{catchPhrase}}"/>
-<button type="submit">Create</button>
+<h1>Edit Celebrity Info</h1>
+<form method="POST" action="/celebrities/{{id}}/edit">
+    <label>Name</label>
+    <input type="text" name="name" value={{name}} />
+    <label>occupation</label>
+    <input type="text" name="occupation" value={{occupation}} />
+    {{!-- <select name="occupation">
+        <option value="0">Select author</option>
+        {{#each authors}}
+            {{#eq name ../book.author.name}}
+            <!-- The dot dot means we want to look for authors outside of the each scope-->
+             <!-- EQ is the new helper that means equals-->
+            <option value={{id}} selected>{{name}}</option>
+            {{else}}
+            <option value={{id}}>{{name}}</option>
+            {{/eq}}
+        {{/each}}
+    </select> --}}
+    <label>Catch Phrase</label>
+    <textarea rows="5" cols="20" name="catchPhrase">{{catchPhrase}}</textarea>
+    <button type="submit">Update</button>
 </form>

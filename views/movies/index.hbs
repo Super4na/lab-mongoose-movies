@@ -1,0 +1,15 @@
+<h2>Featured Movies</h2>
+ 
+<ul>
+{{#each movies}}
+<li>
+    <a href="movies/{{id}}">   {{title}}  </a>
+    <form action="/movies/{{id}}/delete" method="POST">
+        <button type="submit">Delete</button>
+    </form>
+    <br/>
+</li>
+{{/each}}
+</ul>
+ 
+ 
