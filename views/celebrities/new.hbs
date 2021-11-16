@@ -1,16 +1,17 @@
-<h1>Create a Book</h1>
+<h1>Add a Celebrity</h1>
 
 <form method="POST" action="/celebrities/new">
     <label>Name</label>
     <input type="text" name="name" />
     <label>Occupation</label>
-     <input type="text" name="occupation" />
-    {{!--<select name="author">
-        <option value="0">Select author</option>
-        {{#each authors}}
-        <option value="{{id}}">{{name}}</option>
-        {{/each}}
-    </select> --}}
+    <select type="text" name="occupation">
+        <option value="0">Select Occupation</option>
+        <option value="singer">singer</option>
+        <option value="actor">actor</option>
+        <option value="comedian">comedian</option>
+        <option value="unknown">unknown</option>
+        
+    </select> 
     <label>Catch Phrase</label>
     <textarea rows="5" cols="20" name="catchPhrase"></textarea>
     <button type="submit">Create</button>

@@ -1,11 +1,17 @@
 const mongoose = require("mongoose");
 
-const celebritySchema = mongoose.Schema({
+const celebritySchema = mongoose.Schema(
+  {
     name: String,
-    occupation: String,
+    occupation: {
+      type: String,
+      enum: ["singer", "actor", "comedian", "unknown"],
+    },
     catchPhrase: String,
-}, {
+  },
+  {
     timestamps: true,
-});
+  }
+);
 
-module.exports = mongoose.model("Celebrity", celebritySchema)
+module.exports = mongoose.model("Celebrity", celebritySchema);
